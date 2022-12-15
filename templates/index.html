@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+{% extends 'home.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{hey.image.url}}" width="500" height="500"><br>
+        </div>
+        <div class="col-md-6">
+
+<h1 style="background-color:powderblue;font-family:courier;">{{hey.name}}</h1><br>
+<b>{{hey.desc}}</b><br>
+{{hey.year}}<br>
+<a class="btn btn-warning" href="{% url 'filmapp:updation' hey.id %}">Update</a>
+<a class="btn btn-danger" href="{% url 'filmapp:deletion' hey.id %}">Delete</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+</body>
+</html>

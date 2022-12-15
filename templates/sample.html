@@ -1,0 +1,31 @@
+{% extends 'home.html' %}
+{% block body %}
+
+
+<div class="container">
+  <div class="row">
+    {% for i in movie_list %}
+    <div class="col-md-3 p-3">
+<div class="card" style="width: 18rem;">
+  <img src="{{i.image.url}}" height="200" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{i.name}}</h5>
+<!--    <p class="card-text">{{i.desc}}</p>-->
+    <a href="{% url 'filmapp:detail' i.id %}" class="btn btn-primary">View Details</a>
+  </div>
+</div>
+      </div>
+    {% endfor %}
+</div>
+
+</div>
+{% endblock %}
+<!--<img src="{{i.image.url}}" width="200" height="200">-->
+<!--{{i.id}}------<>{{i.name}}-----<>{{i.year}}------<>{{i.desc}}<br>-->
+<!--<a href="theatre/{{i.id}}"> {{i.name}}<br></a>-->
+<!--<a href="{% url 'filmapp:detail' i.id %}">{{i.name}}</a><br>-->
+
+<!--<a href="https://www.youtube.com/">{{i.name}}<br></a>-->
+
+
+
